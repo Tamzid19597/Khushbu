@@ -88,7 +88,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="form">
                         <h2>Login to your account</h2>
                         <form method="post" th:action="@{/login}" th:object="${user}">
-                            <input type="text" name="Email" placeholder="Username" th:field="*{email}"required=" ">
+                            <input type="text" name="Email" placeholder="Email" th:field="*{email}"required=" ">
                             <input type="password" name="Password" placeholder="Password" th:field="*{password}" required=" ">
 <!--                            <button>Log in</button>-->
                             <input type="submit">

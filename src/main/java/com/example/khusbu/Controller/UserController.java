@@ -60,6 +60,7 @@ public class UserController {
             model.addAttribute("Deals",dealService.getDeals(profileService.getProfileUser()));
             return "myDeal";
         }
+        model.addAttribute("user",new User());
         return "login";
     }
 

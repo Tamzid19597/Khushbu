@@ -2,6 +2,7 @@ package com.example.khusbu.Controller;
 
 import com.example.khusbu.Model.Deal;
 import com.example.khusbu.Model.Product;
+import com.example.khusbu.Model.User;
 import com.example.khusbu.Repository.ProductRepository;
 import com.example.khusbu.Service.DealService;
 import com.example.khusbu.Service.ProductService;
@@ -56,7 +57,11 @@ public class ProductController {
             model.addAttribute("deal", new Deal());
             return "userInfo";
         }
-        else return "login";
+
+        else{
+            model.addAttribute("user", new User());
+            return "login";
+        }
     }
     @PostMapping("/product/buy/{id}")
     public RedirectView buyProduct(Model model, @PathVariable String id,Deal deal){
