@@ -21,7 +21,7 @@
 </head>
 <body>
 
-<h2>HTML Table</h2>
+<h2>All Products</h2>
 <a th:href="@{/product/add}">Add Product</a>
 <table>
   <tr>
@@ -29,13 +29,14 @@
     <th>Name</th>
     <th>Price</th>
     <th>Category</th>
+    <th>Operation</th>
   </tr>
   <tr th:each="product: ${products}">
     <td th:text="${product.productId}" />
     <td th:text="${product.productName}" />
     <td th:text="${product.productPrice}" />
     <td th:text="${product.productCategory}" />
-    <a th:href="@{/product/delete/{id}(id=product.productId)}">Delete</a>
+    <td><a th:href="@{/product/delete/{id}(id=${product.productId})}">Delete</a></td>
 
   </tr>
 </table>

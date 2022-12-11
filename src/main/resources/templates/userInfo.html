@@ -80,28 +80,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <div class="w3l_banner_nav_right">
     <!-- login -->
     <div class="w3_login">
-      <h3>Sign Up</h3>
+      <h3>Your Info</h3>
       <div class="w3_login_module">
         <div class="module form-module">
           <div class="toggle"><i class="fa fa-times fa-pencil"></i>
             <div class="tooltip">Click Me</div>
           </div>
           <div class="form">
-            <h2>Create an account</h2>
+            <h2>Your Info</h2>
             <!--                        <div class="w3log-social my-4 text-center">-->
             <!--                            <a href="#facebook" class="facebook"><span class="fa fa-facebook"></span></a>-->
             <!--                            <a href="#twitter" class="twitter"><span class="fa fa-twitter"></span></a>-->
             <!--                            <a href="#linkedin" class="linkedin"><span class="fa fa-linkedin"></span></a>-->
             <!--                        </div>-->
-            <form method="post" th:action="@{/signup}" th:object="${user}">
+            <form method="post" th:action="@{/product/buy/{id}(id=${productId})}" th:object="${deal}">
               <input type="text" name="Username" placeholder="Username" th:field="*{userName}" required=" ">
               <input type="text" name="Email" placeholder="Email" th:field="*{email}" required=" ">
-              <input type="password" name="Password" placeholder="Password" th:field="*{password}"required=" ">
-              <button type="submit">Register</button>
-<!--              <input type="submit" value="Register">-->
+              <input type="text" name="Password" placeholder="Number" th:field="*{number}"required=" ">
+              <input type="text" name="Password" placeholder="Address" th:field="*{address}"required=" ">
+              <button type="submit">Submit</button>
+              <!--              <input type="submit" value="Register">-->
             </form>
           </div>
-          <div class="cta"><a th:href="@{/signup}">Forgot your password?</a></div>
+          <div class="cta"><a th:href="@{/home}">Back to Home?</a></div>
         </div>
       </div>
 
@@ -218,5 +219,4 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="/assets/js/bootstrap.min.js"></script>
 
 </body>
-
 </html>

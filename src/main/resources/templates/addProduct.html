@@ -80,31 +80,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <div class="w3l_banner_nav_right">
     <!-- login -->
     <div class="w3_login">
-      <h3>Sign Up</h3>
+      <h3>Product Add Page</h3>
       <div class="w3_login_module">
         <div class="module form-module">
           <div class="toggle"><i class="fa fa-times fa-pencil"></i>
             <div class="tooltip">Click Me</div>
           </div>
           <div class="form">
-            <h2>Create an account</h2>
+            <h2>Add new Product</h2>
             <!--                        <div class="w3log-social my-4 text-center">-->
             <!--                            <a href="#facebook" class="facebook"><span class="fa fa-facebook"></span></a>-->
             <!--                            <a href="#twitter" class="twitter"><span class="fa fa-twitter"></span></a>-->
             <!--                            <a href="#linkedin" class="linkedin"><span class="fa fa-linkedin"></span></a>-->
             <!--                        </div>-->
-            <form method="post" th:action="@{/signup}" th:object="${user}">
-              <input type="text" name="Username" placeholder="Username" th:field="*{userName}" required=" ">
-              <input type="text" name="Email" placeholder="Email" th:field="*{email}" required=" ">
-              <input type="password" name="Password" placeholder="Password" th:field="*{password}"required=" ">
-              <button type="submit">Register</button>
-<!--              <input type="submit" value="Register">-->
+            <form method="post" th:action="@{/product/add}" th:object="${product}">
+              <input type="text" name="Username" placeholder="product Name" th:field="*{productName}" required=" ">
+              <input type="text" name="Email" placeholder="product category" th:field="*{productCategory}" required=" ">
+              <input type="text" name="Password" placeholder="product price" th:field="*{productPrice}"required=" ">
+              <input type="text" name="Password" placeholder="product description" th:field="*{productDescription}"required=" ">
+              <input type="text" name="Password" placeholder="imageS ex:/assets/images/tag.png" th:field="*{productImageS}"required=" ">
+              <input type="text" name="Password" placeholder="imageS ex:/assets/images/tag.png" th:field="*{productImageB}"required=" ">
+              <button type="submit">Add</button>
+              <!--              <input type="submit" value="Register">-->
             </form>
           </div>
-          <div class="cta"><a th:href="@{/signup}">Forgot your password?</a></div>
+          <div class="cta"><a th:href="@{/home}">Back To Home?</a></div>
         </div>
       </div>
-
     </div>
   </div>
 </div>

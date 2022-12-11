@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  </style>
+</head>
+<body>
+
+<h2>All Deals</h2>
+<table>
+  <tr>
+    <th>Customer Name</th>
+    <th>Number</th>
+    <th>Address</th>
+    <th>Product Name</th>
+    <th>Price</th>
+    <th>Order Time</th>
+    <th>Status</th>
+    <th>See product</th>
+  </tr>
+  <tr th:each="deal: ${Deals}">
+    <td th:text="${deal.userName}" />
+    <td th:text="${deal.number}" />
+    <td th:text="${deal.address}" />
+    <td th:text="${deal.productName}" />
+    <td th:text="${deal.productPrice}" />
+    <td th:text="${deal.orderTime}" />
+    <td th:text="${deal.status}" />
+    <td><a th:href="@{/deals/{id}(id=${deal.dealId})}">Set as Delivered</a></td>
+  </tr>
+</table>
+
+</body>
+</html>
+
